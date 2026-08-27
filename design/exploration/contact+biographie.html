@@ -1,0 +1,325 @@
+<!doctype html>
+
+<html class="dark" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ALEX.DEV - Parcours &amp; Contact</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Space+Grotesk:wght@600&amp;family=Syne:wght@600;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#1f1f24",
+              "error-container": "#93000a",
+              "on-secondary-container": "#00616d",
+              "tertiary-container": "#ffe16d",
+              "surface-container-high": "#292a2e",
+              "surface-bright": "#38393d",
+              "primary-fixed": "#e2e2e2",
+              "on-primary-container": "#636565",
+              primary: "#ffffff",
+              outline: "#8e9192",
+              "outline-variant": "#444748",
+              tertiary: "#ffffff",
+              "primary-fixed-dim": "#c6c6c7",
+              "secondary-fixed-dim": "#00daf3",
+              "surface-tint": "#c6c6c7",
+              "surface-container-lowest": "#0d0e12",
+              secondary: "#bdf4ff",
+              "inverse-primary": "#5d5f5f",
+              "secondary-fixed": "#9cf0ff",
+              "text-secondary": "#8A8F98",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary-fixed": "#001f24",
+              "surface-dim": "#121317",
+              "on-error-container": "#ffdad6",
+              "on-tertiary-container": "#776300",
+              "on-surface-variant": "#c4c7c8",
+              "tertiary-fixed": "#ffe16d",
+              "on-primary-fixed": "#1a1c1c",
+              "on-background": "#e3e2e7",
+              "inverse-on-surface": "#2f3035",
+              background: "#121317",
+              "primary-container": "#e2e2e2",
+              "accent-academic": "#FFD700",
+              "on-surface": "#e3e2e7",
+              surface: "#121317",
+              "on-error": "#690005",
+              "secondary-container": "#00e3fd",
+              "surface-container-low": "#1a1b20",
+              "inverse-surface": "#e3e2e7",
+              "surface-variant": "#343439",
+              "on-tertiary-fixed-variant": "#544600",
+              error: "#ffb4ab",
+              "on-tertiary": "#3a3000",
+              "on-secondary-fixed-variant": "#004f58",
+              "on-primary": "#2f3131",
+              "on-primary-fixed-variant": "#454747",
+              "surface-container-highest": "#343439",
+              "accent-pro": "#00E5FF",
+              "on-secondary": "#00363d",
+              "border-low": "#23252E",
+              "on-tertiary-fixed": "#221b00",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "section-gap-md": "80px",
+              "container-margin": "10%",
+              gutter: "24px",
+              "section-gap-lg": "120px",
+              unit: "8px",
+            },
+            fontFamily: {
+              "display-hero": ["Syne"],
+              "headline-md": ["Space Grotesk"],
+              "nav-link": ["Inter"],
+              "display-hero-mobile": ["Syne"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Space Grotesk"],
+              "label-caps": ["Inter"],
+            },
+            fontSize: {
+              "display-hero": [
+                "64px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "nav-link": ["14px", { lineHeight: "1.0", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "40px",
+                { lineHeight: "1.1", fontWeight: "800" },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.8", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": ["36px", { lineHeight: "1.2", fontWeight: "600" }],
+              "label-caps": [
+                "12px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.1em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .drop-cap::first-letter {
+        font-family: "Syne", sans-serif;
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #ffffff;
+        float: left;
+        margin-right: 0.5rem;
+        margin-top: 0.1rem;
+        line-height: 1;
+      }
+      .form-input-minimal {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #23252e;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        padding: 12px 0;
+        width: 100%;
+        transition: border-color 0.3s ease;
+      }
+      .form-input-minimal:focus {
+        outline: none;
+        border-bottom: 2px solid #00e5ff;
+        box-shadow: none;
+      }
+      .form-input-minimal::placeholder {
+        color: #8a8f98;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface-container-lowest text-on-surface font-body-md antialiased min-h-screen flex flex-col"
+  >
+    <!-- Parcours & Réflexion Section -->
+    <section class="px-[10%] py-section-gap-lg flex-grow">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          class="font-display-hero text-headline-lg text-primary mb-12 text-center"
+          style="
+            font-weight: 600;
+            font-size: 36px;
+            font-family: &quot;Syne&quot;, sans-serif;
+          "
+        >
+          03. PARCOURS &amp; RÉFLEXION
+        </h2>
+        <div
+          class="font-body-lg text-body-lg text-primary drop-cap opacity-90 max-w-3xl mx-auto"
+        >
+          <p class="mb-6">
+            Le développement web ne se résume pas à l'écriture de lignes de
+            code. C'est une démarche d'architecture, de conception et de
+            résolution de problèmes concrets. Mon approche est guidée par une
+            double exigence : la rigueur académique pour assurer la pérennité et
+            la scalabilité des solutions, et le pragmatisme opérationnel pour
+            répondre aux enjeux business immédiats.
+          </p>
+          <p class="mb-6">
+            Cette philosophie s'est forgée au fil d'expériences diverses, allant
+            de la conception d'interfaces complexes à l'optimisation de
+            performances critiques. Je considère chaque projet comme un système
+            global, où le design, l'expérience utilisateur et l'infrastructure
+            technique doivent coexister de manière fluide et transparente.
+          </p>
+          <p>
+            L'apprentissage continu est au cœur de ma pratique. La veille
+            technologique n'est pas une option, mais une nécessité pour
+            maintenir un haut niveau d'expertise et proposer des solutions
+            innovantes, robustes et conformes aux meilleurs standards de
+            l'industrie.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section
+      class="px-[10%] py-section-gap-md bg-background border-t border-border-low"
+    >
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2
+            class="font-display-hero text-headline-lg text-primary mb-4"
+            style="
+              font-weight: 600;
+              font-size: 36px;
+              font-family: &quot;Syne&quot;, sans-serif;
+            "
+          >
+            04. ENTRER EN CONTACT
+          </h2>
+          <p class="font-body-md text-body-md text-text-secondary">
+            Une idée, une collaboration ou simplement une question ? Écrivez-moi
+            directement via ce formulaire.
+          </p>
+        </div>
+        <form class="space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <input
+                class="form-input-minimal"
+                placeholder="Votre nom et prénom"
+                required=""
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                class="form-input-minimal"
+                placeholder="Votre adresse e-mail"
+                required=""
+                type="email"
+              />
+            </div>
+          </div>
+          <div>
+            <input
+              class="form-input-minimal"
+              placeholder="Objet de votre demande"
+              required=""
+              type="text"
+            />
+          </div>
+          <div>
+            <textarea
+              class="form-input-minimal resize-none"
+              placeholder="Votre message..."
+              required=""
+              rows="4"
+            ></textarea>
+          </div>
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-6 pt-4"
+          >
+            <p
+              class="font-label-caps text-label-caps text-text-secondary text-xs max-w-md opacity-70"
+            >
+              En soumettant ce formulaire, j'accepte que les informations
+              saisies soient exploitées dans le cadre strict de la demande de
+              contact.
+            </p>
+            <button
+              class="bg-primary text-surface-container-lowest font-body-md text-body-md px-8 py-4 rounded-none hover:bg-primary-fixed transition-colors duration-300 font-bold whitespace-nowrap group flex items-center gap-2"
+              type="submit"
+            >
+              ENVOYER LE MESSAGE
+              <span
+                class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Footer Component from JSON -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-border-low w-full flex flex-col md:flex-row justify-between items-center px-[10%] py-section-gap-md"
+    >
+      <div class="font-display-hero text-headline-md text-primary mb-6 md:mb-0">
+        ALEX.DEV
+      </div>
+      <div
+        class="font-body-md text-body-md text-text-secondary text-center md:text-left mb-6 md:mb-0 text-sm"
+      >
+        © 2024 ALEX.DEV — All Rights Reserved<br />
+        <span class="opacity-60 text-xs mt-1 block"
+          >Built with React &amp; GSAP. Hosted on VPS OVH.</span
+        >
+      </div>
+      <nav class="flex gap-6">
+        <a
+          class="font-body-md text-body-md text-text-secondary hover:text-primary transition-colors text-sm"
+          href="#"
+          >Privacy Policy</a
+        >
+        <a
+          class="font-body-md text-body-md text-text-secondary hover:text-primary transition-colors text-sm"
+          href="#"
+          >RGPD Compliance</a
+        >
+        <a
+          class="font-body-md text-body-md text-text-secondary hover:text-primary transition-colors text-sm"
+          href="#"
+          >Terms of Service</a
+        >
+      </nav>
+    </footer>
+  </body>
+</html>

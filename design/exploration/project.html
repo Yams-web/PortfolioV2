@@ -1,0 +1,904 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Selected Works - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;family=Syne:wght@800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#004f58",
+              error: "#ffb4ab",
+              "on-primary-fixed": "#1a1c1c",
+              "on-surface-variant": "#c4c7c8",
+              primary: "#ffffff",
+              "error-container": "#93000a",
+              "on-secondary-fixed": "#171c23",
+              "on-error-container": "#ffdad6",
+              "secondary-fixed-dim": "#c2c7d0",
+              secondary: "#c2c7d0",
+              "primary-fixed": "#e2e2e2",
+              "on-secondary-fixed-variant": "#42474f",
+              "outline-variant": "#444748",
+              "tertiary-container": "#9cf0ff",
+              "inverse-primary": "#5d5f5f",
+              "primary-container": "#e2e2e2",
+              "on-tertiary-fixed": "#001f24",
+              "inverse-on-surface": "#2f3035",
+              "on-primary-fixed-variant": "#454747",
+              "on-error": "#690005",
+              "surface-container-highest": "#343439",
+              "on-secondary-container": "#b4b9c2",
+              "on-primary-container": "#636565",
+              "academic-gold": "#FFD700",
+              "surface-variant": "#343439",
+              "primary-fixed-dim": "#c6c6c7",
+              "on-tertiary-container": "#006f7c",
+              "on-primary": "#2f3131",
+              "surface-container-lowest": "#0d0e12",
+              outline: "#8e9192",
+              "inverse-surface": "#e3e2e7",
+              "tertiary-fixed-dim": "#00daf3",
+              "secondary-container": "#444951",
+              surface: "#121317",
+              "surface-tint": "#c6c6c7",
+              "border-technical": "#23252E",
+              "surface-bright": "#38393d",
+              "on-tertiary": "#00363d",
+              "on-background": "#e3e2e7",
+              background: "#121317",
+              "secondary-fixed": "#dee3ec",
+              tertiary: "#ffffff",
+              "surface-container": "#1f1f24",
+              "surface-container-low": "#1a1b20",
+              "tertiary-fixed": "#9cf0ff",
+              "surface-container-high": "#292a2e",
+              "on-surface": "#e3e2e7",
+              "on-secondary": "#2c3138",
+              "surface-dim": "#121317",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "section-padding": "120px",
+              "bento-gap": "24px",
+              "grid-margin": "10%",
+              "grid-gutter": "1px",
+              "block-padding": "40px",
+            },
+            fontFamily: {
+              caption: ["Inter"],
+              "label-technical": ["Space Grotesk"],
+              "body-md": ["Inter"],
+              "display-hero-mobile": ["Syne"],
+              "display-hero": ["Syne"],
+              "headline-lg": ["Space Grotesk"],
+            },
+            fontSize: {
+              caption: ["12px", { lineHeight: "1.4", fontWeight: "300" }],
+              "label-technical": [
+                "12px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.15em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": [
+                "15px",
+                {
+                  lineHeight: "1.8",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "display-hero-mobile": [
+                "48px",
+                { lineHeight: "1.1", fontWeight: "800" },
+              ],
+              "display-hero": [
+                "80px",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "-0.04em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom utilities for specific hover effects requested */
+      .bento-card-hover-content {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+      }
+      .bento-card:hover .bento-card-hover-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .bento-card-rest-content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .bento-card:hover .bento-card-rest-content {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-surface antialiased min-h-screen flex flex-col"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="bg-surface/80 dark:bg-surface/80 fixed top-0 w-full z-50 backdrop-blur-xl border-b border-border-technical dark:border-border-technical flex justify-between items-center px-grid-margin py-6 w-full"
+    >
+      <div
+        class="font-display-hero text-label-technical tracking-tighter text-on-surface dark:text-on-surface uppercase"
+      >
+        STUDIO_ARCHIVE
+      </div>
+      <div class="hidden md:flex gap-8">
+        <!-- Active: Work (Intent match for Selected Works) -->
+        <a
+          class="font-headline-lg text-headline-lg font-label-technical text-label-technical text-primary dark:text-primary border-b border-primary uppercase cursor-crosshair active:scale-95 pb-1"
+          href="#"
+          >Work</a
+        >
+        <a
+          class="font-headline-lg text-headline-lg font-label-technical text-label-technical text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-100 uppercase cursor-crosshair active:scale-95 pb-1"
+          href="#"
+          >Expertise</a
+        >
+        <a
+          class="font-headline-lg text-headline-lg font-label-technical text-label-technical text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-100 uppercase cursor-crosshair active:scale-95 pb-1"
+          href="#"
+          >Journal</a
+        >
+        <a
+          class="font-headline-lg text-headline-lg font-label-technical text-label-technical text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-100 uppercase cursor-crosshair active:scale-95 pb-1"
+          href="#"
+          >Contact</a
+        >
+      </div>
+      <div class="flex items-center gap-4">
+        <span
+          class="font-label-technical text-label-technical text-on-surface uppercase"
+          >PRO</span
+        >
+        <!-- Hybrid Toggle UI -->
+        <div
+          class="w-12 h-6 border border-border-technical rounded-full p-1 cursor-pointer flex items-center"
+        >
+          <div class="w-4 h-4 bg-primary rounded-full"></div>
+        </div>
+        <span
+          class="font-label-technical text-label-technical text-on-surface-variant uppercase"
+          >ACADEMIC</span
+        >
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-section-padding px-grid-margin">
+      <!-- Section Header -->
+      <header class="mb-16">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-4">
+          //  SÉLECTION DE TRAVAUX
+        </h2>
+        <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Une sélection de projets d'études et personnels illustrant mon
+          parcours de développement.
+        </p>
+      </header>
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+        <!-- Decorative Image Block (Col-Span 4) -->
+        <div
+          class="col-span-1 md:col-span-4 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card"
+        >
+          <img
+            class="absolute inset-0 w-full h-full object-cover filter grayscale"
+            data-alt="A striking black and white professional portrait of a modern web developer in a minimalist studio setting. High contrast, technical luxury aesthetic, harsh lighting creating distinct shadows, conveying precision and focus."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHzzw51Ssvd4OthU3UN4CswcVTTXSDL9TWxZaz3VAUjwVxc2dWPAXap_SbZpUdjYGUnpf9F1PxnD202G4DUPdj5aoEr2gskQ4-RUApC8XzzyjXePNsy-Fjoo6GRkotqHhAlf1xLBw1MMOWSf9tWpYgDX6ogQvsTRAN5_JYYPeWocoDW7oQmfZmGNMLMrGg5Cj3U8EUmp79XrjpXD0iGCJq8-X6d8UkeX3t6-I9XoDAA_CGqZ5PQ-Wq"
+          />
+          <div
+            class="absolute inset-0 border border-transparent hover:border-on-surface transition-colors duration-300 pointer-events-none"
+          ></div>
+        </div>
+        <!-- Card 1: Plateforme E-commerce (Col-Span 8) -->
+        <div
+          class="col-span-1 md:col-span-8 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card group hover:border-academic-gold transition-colors duration-300 cursor-crosshair flex flex-col justify-end p-block-padding"
+        >
+          <img
+            alt="E-commerce platform mockup"
+            class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1J2b7zIjdbe1MvrcXLxVP8O4jkIyyWIoAunM0MURXYGjt_wXx9BDaNma4ujg3HN_L1yKnmI1CiBnpBvNvpr1X4vJ20wtYFfOm0eIh0Te8_SAIcvHxzQZVxEly4NmJNtmX6zCzPBsRGn5BvsgDlZMWmY-eZfPLtWl2jpC9Jy6qI6BwN75Kdh2X5gsV9DCTkErBAFtDHhy7xZ90xCHBtlU0YCAkhAhqyhMMZj1f5cTY4EIudLwar4hI"
+          />
+          <!-- Rest State -->
+          <div
+            class="bento-card-rest-content absolute bottom-0 left-0 w-full p-block-padding flex flex-col justify-end h-full bg-gradient-to-t from-surface to-transparent"
+          >
+            <h3
+              class="font-display-hero text-[64px] leading-none text-primary mb-2 tracking-tighter"
+            >
+              Plateforme E-commerce
+            </h3>
+            <p
+              class="font-label-technical text-label-technical text-on-surface-variant uppercase"
+            >
+              Conception technique complète d'une boutique en ligne.
+            </p>
+          </div>
+          <!-- Hover State -->
+          <div
+            class="bento-card-hover-content absolute inset-0 bg-surface p-block-padding flex flex-col justify-between"
+          >
+            <div>
+              <h3 class="font-headline-lg text-headline-lg text-primary mb-4">
+                Plateforme E-commerce
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-xl"
+              >
+                Conception technique complète d'une boutique en ligne. De la
+                modélisation UML de la base de données relationnelle côté
+                serveur jusqu’au déploiement de l'architecture.
+              </p>
+            </div>
+            <div>
+              <div class="mb-6 flex flex-wrap gap-2">
+                <span
+                  class="border border-border-technical px-3 py-1.5 font-label-technical text-caption text-on-surface-variant uppercase tracking-widest"
+                  >React</span
+                >
+                <span
+                  class="border border-border-technical px-3 py-1.5 font-label-technical text-caption text-on-surface-variant uppercase tracking-widest"
+                  >Node.js</span
+                >
+                <span
+                  class="border border-border-technical px-3 py-1.5 font-label-technical text-caption text-on-surface-variant uppercase tracking-widest"
+                  >PostgreSQL</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Env. Git</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Maquette</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Modélisation BDD</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Présentation</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Logique Back</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Monitoring</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: IRC (Col-Span 4) -->
+        <div
+          class="col-span-1 md:col-span-4 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card group hover:border-academic-gold transition-colors duration-300 cursor-crosshair flex flex-col justify-end p-block-padding"
+        >
+          <img
+            alt="Real-time data flow visualization"
+            class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv3gpBsqoZU91IGsAyRoGvzAr7r-ZjTl-K8Ttm5_h6-BFPVhrN1OpgvWTEfUXI6UTxOyI_hVjmqwaXFp5QLjuFXGAPlhX--lw4PaA4tOlcC5sP4ZUHSGfHUVGbZGxqMh1BPV_HccZqlZXFNP7gTwKL6y8ZbFtTqyplybl_kwA8JpuwEang4yauUn6H6qNhLymEGCbB3XFOF004JxZ2ki9rp7SsN5Z1L5MOG2MPm3k-XT2E3km4GyvD"
+          />
+          <div
+            class="bento-card-rest-content absolute bottom-0 left-0 w-full p-block-padding"
+          >
+            <h3 class="font-headline-lg text-headline-lg text-primary mb-2">
+              IRC Real-Time Chat
+            </h3>
+            <p
+              class="font-label-technical text-label-technical text-on-surface-variant uppercase truncate"
+            >
+              Messagerie instantanée en temps réel.
+            </p>
+          </div>
+          <div
+            class="bento-card-hover-content absolute inset-0 bg-surface p-block-padding flex flex-col justify-between"
+          >
+            <div>
+              <h3
+                class="font-headline-lg text-[24px] leading-tight text-primary mb-4"
+              >
+                IRC Real-Time Chat
+              </h3>
+              <p class="font-body-md text-caption text-on-surface-variant">
+                Développement d'une application de messagerie instantanée en
+                temps réel. Intégration d'une interface utilisateur responsive
+                et sécurisation complète des accès utilisateurs.
+              </p>
+            </div>
+            <div>
+              <div class="mb-4 flex flex-wrap gap-1">
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >React</span
+                >
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >Socket.io</span
+                >
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >Express</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-1">
+                <span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Normes CSS</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Front-End</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Authentification</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Projet Libre (Col-Span 4) -->
+        <div
+          class="col-span-1 md:col-span-4 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card group hover:border-academic-gold transition-colors duration-300 cursor-crosshair flex flex-col justify-end p-block-padding"
+        >
+          <img
+            alt="Website architecture wireframe"
+            class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2kmb9NF9DpqZLYnTrG2mJbydJuG7rx51xrNDVUUEu9AfgpAEDQTiF_UpIaZBtQat_AxcwdgFC0abelzi00JQ3kOGsdJ0LSuKBtSNn6PiMT0pLURp5rf-EVnyCWp_Z8qCoHKE-yZB_mnOT0ojhfxYrlOjrjnSoRrED7djxmiR0G53CcMygmtEEyeiNId7J1n1Wi5_04fQlJmxQ2PnNQsXRa2WHasDJBXIzWRZHOlRRqfOTv5e0UVsU"
+          />
+          <div
+            class="bento-card-rest-content absolute bottom-0 left-0 w-full p-block-padding"
+          >
+            <h3 class="font-headline-lg text-headline-lg text-primary mb-2">
+              Projet Libre: POC
+            </h3>
+            <p
+              class="font-label-technical text-label-technical text-on-surface-variant uppercase truncate"
+            >
+              Cadrage fonctionnel et technique.
+            </p>
+          </div>
+          <div
+            class="bento-card-hover-content absolute inset-0 bg-surface p-block-padding flex flex-col justify-between"
+          >
+            <div>
+              <h3
+                class="font-headline-lg text-[24px] leading-tight text-primary mb-4"
+              >
+                Projet Libre: POC
+              </h3>
+              <p class="font-body-md text-caption text-on-surface-variant">
+                Cadrage fonctionnel et technique d'une solution web innovante à
+                partir d'une expression de besoins brute, suivi du prototypage
+                complet.
+              </p>
+            </div>
+            <div>
+              <div class="mb-4 flex flex-wrap gap-1">
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >React</span
+                >
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >Figma</span
+                >
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >UML</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-1">
+                <span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Rédaction CDC</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Spécifications techniques</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Prototype</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Rédiger le code</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4: DevResponsable (Col-Span 4) -->
+        <div
+          class="col-span-1 md:col-span-4 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card group hover:border-academic-gold transition-colors duration-300 cursor-crosshair flex flex-col justify-end p-block-padding"
+        >
+          <img
+            alt="Lighthouse audit report visualization"
+            class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJQXJfokcOxorCOmTv1_ACmmFLWnNuOp9BnCS59bzbdBf6hdlfTZM1XZIaIlUJkrq65GTx-5WQvGLvN6hnzjyjBCDaRJzPvEfiKb17yT2GtxtqEj7r-KEt_ipvS44k6DV_tAigB0cRr8oITwFD0hHKRWbSAOwCvt9_CUaj97InMx9EXQuSBWSkp7_uUFxksO1wdnv-JGTiSc3zeEQiOSvQLM5gOVlqrC_S4AeE0AqRqkTldax332NR"
+          />
+          <div
+            class="bento-card-rest-content absolute bottom-0 left-0 w-full p-block-padding"
+          >
+            <h3 class="font-headline-lg text-headline-lg text-primary mb-2">
+              DevResponsable
+            </h3>
+            <p
+              class="font-label-technical text-label-technical text-on-surface-variant uppercase truncate"
+            >
+              Audit d'accessibilité et d'ergonomie.
+            </p>
+          </div>
+          <div
+            class="bento-card-hover-content absolute inset-0 bg-surface p-block-padding flex flex-col justify-between"
+          >
+            <div>
+              <h3
+                class="font-headline-lg text-[24px] leading-tight text-primary mb-4"
+              >
+                DevResponsable
+              </h3>
+              <p class="font-body-md text-caption text-on-surface-variant">
+                Audit approfondi d'accessibilité (RGPD / WCAG) et d'ergonomie
+                d'un service existant, suivi de la rédaction de documentations
+                techniques.
+              </p>
+            </div>
+            <div>
+              <div class="mb-4 flex flex-wrap gap-1">
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >Lighthouse</span
+                >
+                <span
+                  class="border border-border-technical px-2 py-1 font-label-technical text-[10px] text-on-surface-variant uppercase"
+                  >SEO</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-1">
+                <span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Doc Technique</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Doc Utilisateur</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Optimisation</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Accessibilité</span
+                ><span
+                  class="border border-academic-gold text-academic-gold px-1.5 py-0.5 font-label-technical text-[9px] uppercase"
+                  >Document Argumentatif</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5: MyCrudTester (Col-Span 6) -->
+        <div
+          class="col-span-1 md:col-span-6 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card group hover:border-academic-gold transition-colors duration-300 cursor-crosshair flex flex-col justify-end p-block-padding"
+        >
+          <img
+            alt="Terminal window with test results"
+            class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-U2CReQrZc2a6kiz7LPiktTS3021hESLRE-hIjjzzGLTVdKs6ViJNjQ7AIMzipRnFFpJ7HoHBqyujvWOlP2kK8p5iwkhfxo1kLreexFYkjRIaklHhI_DExKgz5BJ1A4Wq2Vc7R0-QFgzuVQx9FWUWrqkplg2od-MZKgDmHF2zI4oZjg_9IwYnrXA2eM0mvIwQe1sIMkmTMBc_He7ltpy_MUBKZfY51JF6s6zlRXpc-dfq55pF_Uhf"
+          />
+          <div
+            class="bento-card-rest-content absolute bottom-0 left-0 w-full p-block-padding"
+          >
+            <h3
+              class="font-display-hero text-[48px] leading-tight text-primary mb-2 tracking-tighter"
+            >
+              MyCrudTester
+            </h3>
+            <p
+              class="font-label-technical text-label-technical text-on-surface-variant uppercase"
+            >
+              Mise en œuvre d'un plan de tests unitaires.
+            </p>
+          </div>
+          <div
+            class="bento-card-hover-content absolute inset-0 bg-surface p-block-padding flex flex-col justify-between"
+          >
+            <div>
+              <h3 class="font-headline-lg text-headline-lg text-primary mb-4">
+                MyCrudTester
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Mise en œuvre d'un plan de tests unitaires et d'intégration
+                automatisés pour assurer la robustesse de l'application.
+              </p>
+            </div>
+            <div>
+              <div class="mb-4 flex flex-wrap gap-2">
+                <span
+                  class="border border-border-technical px-3 py-1 font-label-technical text-caption text-on-surface-variant uppercase"
+                  >Jest</span
+                >
+                <span
+                  class="border border-border-technical px-3 py-1 font-label-technical text-caption text-on-surface-variant uppercase"
+                  >Cypress</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Plan de Tests</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6: Portfolio V1 (Col-Span 6) -->
+        <div
+          class="col-span-1 md:col-span-6 border border-border-technical bg-surface relative h-[400px] overflow-hidden bento-card group hover:border-academic-gold transition-colors duration-300 cursor-crosshair flex flex-col justify-end p-block-padding"
+        >
+          <img
+            alt="Server rack architecture diagram"
+            class="absolute inset-0 w-full h-full object-cover filter grayscale opacity-40 group-hover:opacity-20 transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6oKiHyYNAJ6sDPBGouI_pdbdQtkN3mn_ZNWBi_ddZG6_3vhGsUVOXlfYXqfbF7Hui8itZk2bm4QIBFmK0HnZHZIeSn9q4LD0Yz6Fo88wxZ9JPJ7Moka0EHgKbSdVu0fAo83RwVTMCrieinFO4bItK3j2JQdaTmlPOmE6xrkOksjfs7au62ocQ-TWkWs5oNlSPsC4HIUsPLn8NNAdkKrqNz4UVPOgznpypkVZb0AZ9S6jytd82fly"
+          />
+          <div
+            class="bento-card-rest-content absolute bottom-0 left-0 w-full p-block-padding"
+          >
+            <h3
+              class="font-display-hero text-[48px] leading-tight text-primary mb-2 tracking-tighter"
+            >
+              Portfolio V1
+            </h3>
+            <p
+              class="font-label-technical text-label-technical text-on-surface-variant uppercase"
+            >
+              Déploiement stable et configuration serveur.
+            </p>
+          </div>
+          <div
+            class="bento-card-hover-content absolute inset-0 bg-surface p-block-padding flex flex-col justify-between"
+          >
+            <div>
+              <h3 class="font-headline-lg text-headline-lg text-primary mb-4">
+                Portfolio V1
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Déploiement final de la solution sur serveur de production (VPS
+                OVH), avec mise en place d'une pipeline CI/CD.
+              </p>
+            </div>
+            <div>
+              <div class="mb-4 flex flex-wrap gap-2">
+                <span
+                  class="border border-border-technical px-3 py-1 font-label-technical text-caption text-on-surface-variant uppercase"
+                  >GitHub Actions</span
+                >
+                <span
+                  class="border border-border-technical px-3 py-1 font-label-technical text-caption text-on-surface-variant uppercase"
+                  >VPS OVH</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="border border-academic-gold text-academic-gold px-2 py-1 font-label-technical text-[10px] uppercase"
+                  >Déploiement Serveur</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="mt-32 border-t border-border-technical pt-16">
+        <header class="mb-16">
+          <h2
+            class="font-headline-lg text-headline-lg text-primary mb-4 uppercase"
+          >
+            // 02. RÉFÉRENTIEL COMPÉTENCES RNCP38436
+          </h2>
+          <p
+            class="font-body-md text-body-md text-on-surface-variant max-w-2xl"
+          >
+            Preuve de validation et d'atteinte du niveau de compétences requis
+            pour l'obtention du titre RNCP38436 (Développeur Web - Niveau 5).
+          </p>
+        </header>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-bento-gap">
+          <div class="border border-border-technical p-6 bg-surface/40">
+            <h3
+              class="font-label-technical text-label-technical text-academic-gold mb-6 uppercase tracking-widest"
+            >
+              BC01: CADRER UN PROJET
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C1]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Rédiger un Cahier Des Charges (CDC) conforme RGPD.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C2]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Rédiger des spécifications techniques de la solution.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C3]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Déployer un environnement de travail collaboratif
+                  (Git/Kanban).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C4]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Réaliser une maquette ergonomique et accessible.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C5]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Modéliser les fonctionnalités et la Base de Données (UML/MCD).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C6]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Présenter et argumenter les choix techniques devant décideurs.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="border border-border-technical p-6 bg-surface/40">
+            <h3
+              class="font-label-technical text-label-technical text-academic-gold mb-6 uppercase tracking-widest"
+            >
+              BC02: DÉVELOPPER UNE SOLUTION
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C7]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Développer le prototype de la solution web.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C8]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Rédiger le code de la solution en respectant les normes
+                  d'accessibilité.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C9]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Intégrer les différents éléments de la solution web
+                  (HTML/CSS/JS).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C10]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Implémenter la partie Front-End d'une solution web.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C11]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Implémenter la logique et la base de données (Back-End).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C12]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Sécuriser les accès via des règles d'authentification solides.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C13]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Concevoir et exécuter un plan de tests
+                  (unitaires/intégration).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C14]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Déployer l'application web sur un serveur de production.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="border border-border-technical p-6 bg-surface/40">
+            <h3
+              class="font-label-technical text-label-technical text-academic-gold mb-6 uppercase tracking-widest"
+            >
+              BC03: ASSURANCE QUALITÉ
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C15]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Rédiger une documentation technique claire et évolutive.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C16]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Rédiger un manuel utilisateur pour garantir leur autonomie.
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C17]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Monitorer le lancement de la solution (retours d’expérience).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C18]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Identifier les axes d'amélioration de performances
+                  (SEO/Vitesse).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C19]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Évaluer la qualité d'ergonomie et d’accessibilité (normes
+                  WCAG).
+                </p>
+              </li>
+              <li class="flex flex-col gap-2">
+                <span
+                  class="font-label-technical text-[10px] text-academic-gold"
+                  >[C20]</span
+                >
+                <p class="font-body-md text-caption text-on-surface">
+                  Argumenter par écrit des propositions d'évolutions
+                  correctives.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface dark:bg-surface w-full border-t border-border-technical grid grid-cols-1 md:grid-cols-4 gap-bento-gap px-grid-margin py-block-padding w-full mt-auto"
+    >
+      <div
+        class="font-display-hero text-headline-lg text-on-surface uppercase mb-4 md:mb-0"
+      >
+        ©2024 DESIGN_SYSTEM_V1.0
+      </div>
+      <div class="flex flex-col gap-2">
+        <a
+          class="font-label-technical text-label-technical uppercase text-on-surface-variant hover:text-academic-gold transition-colors cursor-pointer"
+          href="#"
+          >Index</a
+        >
+        <a
+          class="font-label-technical text-label-technical uppercase text-on-surface-variant hover:text-academic-gold transition-colors cursor-pointer"
+          href="#"
+          >Capabilities</a
+        >
+      </div>
+      <div class="flex flex-col gap-2">
+        <a
+          class="font-label-technical text-label-technical uppercase text-on-surface-variant hover:text-academic-gold transition-colors cursor-pointer"
+          href="#"
+          >Inquiries</a
+        >
+        <a
+          class="font-label-technical text-label-technical uppercase text-on-surface-variant hover:text-academic-gold transition-colors cursor-pointer"
+          href="#"
+          >Privacy</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
