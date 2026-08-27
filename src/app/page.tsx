@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Navbar } from "@/components";
 
 gsap.registerPlugin(useGSAP);
 
@@ -56,14 +57,18 @@ export default function LandingPage(): React.JSX.Element {
       ref={container}
       className="relative app flex items-center h-screen w-full overflow-hidden"
     >
-      <div className="bg-purple-700 h-10 w-10 box absolute top-1/2 left-0 z-50"></div>
+      <div className="bg-[#00E5FF] h-10 w-10 box absolute top-1/2 left-0 z-50"></div>
 
-      <main className="content w-full min-h-screen bg-purple-700 text-white p-10">
-        <h1 className="text-4xl font-bold">Bienvenue sur mon site</h1>
-        <p className="mt-4">
-          L'enchaînement est maintenant parfaitement fluide !
-        </p>
-      </main>
+      <div className="content w-full min-h-screen bg-[#121317] text-[#e3e2e7]">
+        <Navbar />
+
+        <main className="p-10">
+          <h1 className="text-4xl font-bold">Bienvenue sur mon site</h1>
+          <p className="mt-4">
+            L'enchaînement est maintenant parfaitement fluide !
+          </p>
+        </main>
+      </div>
     </div>
   );
 }
