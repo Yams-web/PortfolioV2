@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Navbar } from "@/components";
+import { Navbar, Hero } from "@/components";
 
 gsap.registerPlugin(useGSAP);
 
@@ -62,11 +62,8 @@ export default function LandingPage(): React.JSX.Element {
       <div className="content w-full min-h-screen bg-[#121317] text-[#e3e2e7]">
         <Navbar />
 
-        <main className="p-10">
-          <h1 className="text-4xl font-bold">Bienvenue sur mon site</h1>
-          <p className="mt-4">
-            L'enchaînement est maintenant parfaitement fluide !
-          </p>
+        <main>
+          <Hero />
         </main>
       </div>
     </div>
