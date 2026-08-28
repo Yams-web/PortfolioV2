@@ -1,5 +1,8 @@
-import React from "react";
-import { PROJECTS, type ProjectSize } from "./projects.data";
+"use client";
+
+import React, { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { PROJECTS, type Project, type ProjectSize } from "./projects.data";
 
 // Répartition des cartes sur la grille 12 colonnes (desktop), en écho au
 // bento grid de la maquette d'exploration `design/exploration/project.html`.
@@ -21,6 +24,67 @@ const TITLE_CLASS_BY_SIZE: Record<ProjectSize, string> = {
   sm: "text-lg font-bold text-white sm:text-xl",
 };
 
+// Contenu visible par défaut : le titre, plus un indice permanent (icône +
+// libellé) qui signale que la carte est interactive. Cet indice reste
+// affiché en permanence — on ne compte jamais uniquement sur la découverte
+// du survol, ce qui serait une mauvaise pratique UX (affordance invisible).
+function ProjectCard({ project }: { project: Project }): React.JSX.Element {
+  // Le survol (CSS group-hover/group-focus) couvre déjà souris et clavier.
+  // Cet état ne sert que de filet de sécurité pour le tactile, où :hover
+  // n'est pas fiable : un tap bascule l'affichage de la description.
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggle = () => setIsExpanded((current) => !current);
+
+  return (
+    <article
+      tabIndex={0}
+      role="button"
+      aria-expanded={isExpanded}
+      aria-label={`${project.title} — afficher la description`}
+      onClick={toggle}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggle();
+        }
+      }}
+      className={`group relative flex min-h-[220px] cursor-pointer flex-col overflow-hidden border border-transparent bg-[#121317] p-6 outline-none transition-colors duration-300 hover:border-[#00E5FF] focus-visible:border-[#00E5FF] sm:p-10 md:col-span-4 ${
+        COLUMN_SPAN_BY_SIZE[project.size]
+      }`}
+    >
+      {/* État de repos : titre + indice permanent d'interactivité. */}
+      <div
+        className={`flex h-full flex-col justify-between gap-6 transition-all duration-300 ${
+          isExpanded
+            ? "pointer-events-none -translate-y-2 opacity-0"
+            : "translate-y-0 opacity-100"
+        } group-hover:pointer-events-none group-hover:-translate-y-2 group-hover:opacity-0 group-focus:pointer-events-none group-focus:-translate-y-2 group-focus:opacity-0`}
+      >
+        <h3 className={TITLE_CLASS_BY_SIZE[project.size]}>{project.title}</h3>
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-[#c4c7c8]">
+          <ArrowUpRight aria-hidden="true" size={16} />
+          Survoler pour en savoir plus
+        </div>
+      </div>
+
+      {/* État révélé (survol, focus clavier ou tap) : description complète. */}
+      <div
+        className={`absolute inset-0 flex flex-col justify-between gap-6 bg-[#121317] p-6 transition-all duration-300 sm:p-10 ${
+          isExpanded
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-2 opacity-0"
+        } group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus:pointer-events-auto group-focus:translate-y-0 group-focus:opacity-100`}
+      >
+        <h3 className={TITLE_CLASS_BY_SIZE[project.size]}>{project.title}</h3>
+        <p className="whitespace-pre-line text-sm leading-[1.8] text-[#c4c7c8]">
+          {project.description}
+        </p>
+      </div>
+    </article>
+  );
+}
+
 export function Projects(): React.JSX.Element {
   const projects = PROJECTS.filter((project) => project.description !== "");
 
@@ -32,7 +96,7 @@ export function Projects(): React.JSX.Element {
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 max-w-2xl">
           <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
-            // Sélection de travaux
+            {"// Sélection de travaux"}
           </h2>
           <p className="mt-4 text-2xl font-bold leading-tight text-white sm:text-4xl">
             Projets
@@ -40,6 +104,10 @@ export function Projects(): React.JSX.Element {
           <p className="mt-4 text-sm leading-[1.8] text-[#c4c7c8]">
             Une sélection de projets d&apos;études et personnels illustrant
             mon parcours de développement.
+          </p>
+          <p className="mt-2 text-xs uppercase tracking-[0.1em] text-[#c4c7c8]/70">
+            Survolez une carte (ou sélectionnez-la au clavier / tactile) pour
+            afficher sa description.
           </p>
         </header>
 
@@ -50,19 +118,7 @@ export function Projects(): React.JSX.Element {
         ) : (
           <div className="grid grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] md:grid-cols-12">
             {projects.map((project) => (
-              <article
-                key={project.id}
-                className={`flex flex-col justify-between gap-6 bg-[#121317] p-6 sm:p-10 md:col-span-4 ${
-                  COLUMN_SPAN_BY_SIZE[project.size]
-                }`}
-              >
-                <h3 className={TITLE_CLASS_BY_SIZE[project.size]}>
-                  {project.title}
-                </h3>
-                <p className="whitespace-pre-line text-sm leading-[1.8] text-[#c4c7c8]">
-                  {project.description}
-                </p>
-              </article>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         )}
