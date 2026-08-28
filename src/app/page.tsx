@@ -1,5 +1,5 @@
 import React from "react";
-import { IntroAnimation, Navbar, Hero } from "@/components";
+import { IntroAnimation, Navbar, Hero, Projects } from "@/components";
 
 export default function LandingPage(): React.JSX.Element {
   return (
@@ -8,6 +8,7 @@ export default function LandingPage(): React.JSX.Element {
 
       <main>
         <Hero />
+        <Projects />
       </main>
     </IntroAnimation>
   );
