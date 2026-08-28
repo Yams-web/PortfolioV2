@@ -1,6 +1,6 @@
 export type ProjectSize = "lg" | "md" | "sm";
 
-export interface Project {
+export interface IProject {
   id: string;
   title: string;
   /** Description longue du projet, fournie au fil de l'eau (voir échanges avec Yamin). */
@@ -16,7 +16,7 @@ export interface Project {
 // Ordre pensé pour former des lignes complètes de 12 colonnes en desktop
 // (lg=8 + sm=4, puis md=6 + md=6, puis lg=8 + sm=4) tout en alternant les
 // cartes les plus importantes avec les plus modestes.
-export const PROJECTS: Project[] = [
+export const PROJECTS: IProject[] = [
   {
     id: "e-commerce",
     title: "E-commerce",

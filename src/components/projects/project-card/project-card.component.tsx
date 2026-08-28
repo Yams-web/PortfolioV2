@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { type Project, type ProjectSize } from "../projects.data";
+import { type IProject, type ProjectSize } from "../projects.data";
 
 // Répartition des cartes sur la grille 12 colonnes (desktop), en écho au
 // bento grid de la maquette d'exploration `design/exploration/project.html`.
@@ -24,15 +24,15 @@ const TITLE_CLASS_BY_SIZE: Record<ProjectSize, string> = {
   sm: "text-lg font-bold text-white sm:text-xl",
 };
 
-export interface ProjectCardProps {
-  project: Project;
+export interface IProjectCardProps {
+  project: IProject;
 }
 
 // Contenu visible par défaut : le titre, plus un indice permanent (icône +
 // libellé) qui signale que la carte est interactive. Cet indice reste
 // affiché en permanence — on ne compte jamais uniquement sur la découverte
 // du survol, ce qui serait une mauvaise pratique UX (affordance invisible).
-export function ProjectCard({ project }: ProjectCardProps): React.JSX.Element {
+export function ProjectCard({ project }: IProjectCardProps): React.JSX.Element {
   // Le survol (CSS group-hover/group-focus) couvre déjà souris et clavier.
   // Cet état ne sert que de filet de sécurité pour le tactile, où :hover
   // n'est pas fiable : un tap bascule l'affichage de la description.

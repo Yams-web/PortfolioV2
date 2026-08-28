@@ -4,12 +4,12 @@ import { useRef, type RefObject } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { dispatchIntroComplete } from "@/lib/animation-events";
 
-export interface UseIntroAnimationResult {
+export interface IUseIntroAnimationResult {
   container: RefObject<HTMLDivElement | null>;
   counter: RefObject<HTMLSpanElement | null>;
 }
 
-export function useIntroAnimation(): UseIntroAnimationResult {
+export function useIntroAnimation(): IUseIntroAnimationResult {
   const container = useRef<HTMLDivElement>(null);
   const counter = useRef<HTMLSpanElement>(null);
 

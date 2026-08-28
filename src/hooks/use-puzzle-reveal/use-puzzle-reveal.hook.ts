@@ -4,11 +4,11 @@ import { useEffect, useRef, type RefObject } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { onIntroComplete } from "@/lib/animation-events";
 
-export interface UsePuzzleRevealOptions {
+export interface IUsePuzzleRevealOptions {
   selector?: string;
 }
 
-export interface UsePuzzleRevealResult {
+export interface IUsePuzzleRevealResult {
   container: RefObject<HTMLElement | null>;
 }
 
@@ -22,7 +22,7 @@ const PIECE_OFFSETS: ReadonlyArray<{ x: number; y: number }> = [
 
 export function usePuzzleReveal({
   selector = ".puzzle-piece",
-}: UsePuzzleRevealOptions = {}): UsePuzzleRevealResult {
+}: IUsePuzzleRevealOptions = {}): IUsePuzzleRevealResult {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(

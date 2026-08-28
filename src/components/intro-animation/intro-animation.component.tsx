@@ -3,13 +3,13 @@
 import React from "react";
 import { useIntroAnimation } from "@/hooks";
 
-export interface IntroAnimationProps {
+export interface IIntroAnimationProps {
   children: React.ReactNode;
 }
 
 export function IntroAnimation({
   children,
-}: IntroAnimationProps): React.JSX.Element {
+}: IIntroAnimationProps): React.JSX.Element {
   const { container, counter } = useIntroAnimation();
 
   return (
