@@ -2,6 +2,7 @@
 
 import { useRef, type RefObject } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { dispatchIntroComplete } from "@/lib/animation-events";
 
 export interface UseIntroAnimationResult {
   container: RefObject<HTMLDivElement | null>;
@@ -57,7 +58,10 @@ export function useIntroAnimation(): UseIntroAnimationResult {
         .set(container.current, {
           height: "auto",
           overflow: "visible",
-        });
+        })
+        // Signale aux autres animations de la page (ex : l'assemblage
+        // "puzzle" des blocs du Hero) que l'écran de chargement est terminé.
+        .call(dispatchIntroComplete);
     },
     { scope: container }
   );

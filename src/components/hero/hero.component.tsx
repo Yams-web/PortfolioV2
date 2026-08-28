@@ -1,15 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import { ArrowDown, ArrowRight } from "lucide-react";
+import { usePuzzleReveal } from "@/hooks";
 
 export function Hero(): React.JSX.Element {
+  const { container } = usePuzzleReveal();
+
   return (
     <section
+      ref={container}
       id="accueil"
       className="grid grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] md:grid-cols-12"
     >
       {/* Bloc gauche : accroche */}
-      <div className="flex min-h-[614px] flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-8">
+      <div className="puzzle-piece flex min-h-[614px] flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-8">
         <div className="max-w-4xl">
           <h1 className="mb-8 text-[48px] font-bold leading-[1.1] text-white md:text-[80px] md:leading-none md:tracking-[-0.04em]">
             Lorem ipsum dolor sit amet consectetur.
@@ -33,7 +39,7 @@ export function Hero(): React.JSX.Element {
       </div>
 
       {/* Bloc droit : photo professionnelle */}
-      <div className="group relative flex h-full flex-col bg-[#121317] p-6 sm:p-10 md:col-span-4">
+      <div className="puzzle-piece group relative flex h-full flex-col bg-[#121317] p-6 sm:p-10 md:col-span-4">
         <div className="pointer-events-none absolute inset-6 z-10 border border-[#23252E] transition-colors group-hover:border-[#00E5FF] sm:inset-10" />
         <div className="relative h-full w-full min-h-[280px] overflow-hidden bg-[#1a1b20]">
           <img
@@ -50,7 +56,7 @@ export function Hero(): React.JSX.Element {
       </div>
 
       {/* Bloc bas gauche : détails */}
-      <div className="flex h-48 flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-4">
+      <div className="puzzle-piece flex h-48 flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-4">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-[#c4c7c8]">
           Lorem ipsum dolor sit amet
         </p>
@@ -61,7 +67,7 @@ export function Hero(): React.JSX.Element {
       </div>
 
       {/* Bloc bas milieu : appel à l'action */}
-      <div className="group flex h-48 items-center justify-center border border-transparent bg-white text-[#0d0e12] transition-colors hover:border-white hover:bg-[#121317] hover:text-white md:col-span-4">
+      <div className="puzzle-piece group flex h-48 items-center justify-center border border-transparent bg-white text-[#0d0e12] transition-colors hover:border-white hover:bg-[#121317] hover:text-white md:col-span-4">
         <Link
           href="#contact"
           className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em]"
@@ -76,7 +82,7 @@ export function Hero(): React.JSX.Element {
       </div>
 
       {/* Bloc bas droite : statistique */}
-      <div className="flex h-48 flex-col justify-end bg-[#121317] p-6 sm:p-10 md:col-span-4">
+      <div className="puzzle-piece flex h-48 flex-col justify-end bg-[#121317] p-6 sm:p-10 md:col-span-4">
         <p className="text-[48px] font-bold leading-none text-white">99.9%</p>
         <p className="mt-2 text-xs uppercase tracking-[0.01em] text-[#c4c7c8]">
           Lorem ipsum dolor
