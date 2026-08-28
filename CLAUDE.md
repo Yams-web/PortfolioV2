@@ -28,6 +28,9 @@ Portfolio personnel Epitech (titre RNCP), site vitrine unique (pas de séparatio
 - Un dossier par section/feature dans `src/components/`
 - Privilégier des commits atomiques (une fonctionnalité = un commit), messages clairs en français ou anglais (à trancher et rester cohérent)
 - Respecter les normes d'accessibilité (a11y) et les bonnes pratiques HTML/CSS/JS à jour
+- Aucun commentaire dans le code (le code doit être auto-porteur : noms explicites plutôt qu'explications en commentaire)
+- Toutes les variables sont typées explicitement (pas de laisser-faire sur l'inférence implicite de TypeScript)
+- Les enums commencent par `E` (ex. `EProjectSize`) et les interfaces par `I` (ex. `IProject`)
 
 ## Projets à intégrer et compétences RNCP démontrées
 
