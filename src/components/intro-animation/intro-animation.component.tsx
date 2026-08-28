@@ -29,7 +29,7 @@ export function IntroAnimation({
         </h2>
         <div className="flex w-48 flex-col items-center gap-3 sm:w-64">
           <div className="h-px w-full origin-left overflow-hidden bg-[#23252E]">
-            <div className="intro-bar h-full w-full origin-left bg-[#00E5FF]" />
+            <div className="intro-bar h-full w-full origin-left scale-x-0 bg-[#00E5FF]" />
           </div>
           <span
             ref={counter}
@@ -40,7 +40,7 @@ export function IntroAnimation({
         </div>
       </div>
 
-      <div className="content w-full min-h-screen bg-[#121317] text-[#e3e2e7]">
+      <div className="content invisible w-full min-h-screen bg-[#121317] text-[#e3e2e7] opacity-0">
         {children}
       </div>
     </div>
