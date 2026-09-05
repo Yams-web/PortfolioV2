@@ -28,6 +28,7 @@ export function ProjectCard({ project }: IProjectCardProps): React.JSX.Element {
 
   return (
     <article
+      id={project.id}
       tabIndex={0}
       role="button"
       aria-expanded={isExpanded}
@@ -39,7 +40,7 @@ export function ProjectCard({ project }: IProjectCardProps): React.JSX.Element {
           toggle();
         }
       }}
-      className={`group relative grid min-h-55 cursor-pointer border border-transparent bg-[#121317] p-6 outline-none transition-colors duration-300 hover:border-[#00E5FF] focus-visible:border-[#00E5FF] sm:p-10 md:col-span-4 ${
+      className={`group relative grid min-h-55 scroll-mt-24 cursor-pointer border border-transparent bg-[#121317] p-6 outline-none transition-colors duration-300 hover:border-[#00E5FF] focus-visible:border-[#00E5FF] sm:p-10 md:col-span-4 ${
         COLUMN_SPAN_BY_SIZE[project.size]
       }`}
     >

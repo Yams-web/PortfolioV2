@@ -1,10 +1,18 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { gsap } from "@/lib/gsap";
 import { PROJECTS, type IBadge, type IProject } from "@/components/projects";
+
+const SCROLL_OFFSET_PX: number = 96;
+const SCROLL_DURATION_SECONDS: number = 1;
 
 interface ICompetenceEntry {
   code: string;
   order: number;
   description: string;
+  projectId: string;
   projectTitle: string;
 }
 
@@ -53,6 +61,7 @@ function buildCompetenceEntries(projects: IProject[]): ICompetenceEntry[] {
       code: competence.label,
       order: parseCompetenceOrder(competence.label),
       description: competence.description,
+      projectId: project.id,
       projectTitle: project.title,
     }))
   );
@@ -77,6 +86,25 @@ function buildCompetenceBlocks(projects: IProject[]): ICompetenceBlock[] {
   );
 }
 
+function scrollToProject(
+  event: React.MouseEvent<HTMLAnchorElement>,
+  projectId: string
+): void {
+  event.preventDefault();
+
+  const target: HTMLElement | null = document.getElementById(projectId);
+
+  if (target) {
+    gsap.to(window, {
+      duration: SCROLL_DURATION_SECONDS,
+      ease: "power2.out",
+      scrollTo: { y: target, offsetY: SCROLL_OFFSET_PX },
+    });
+  }
+
+  window.history.replaceState(null, "", `#${projectId}`);
+}
+
 export function ReferentielTable(): React.JSX.Element {
   const blocks: ICompetenceBlock[] = buildCompetenceBlocks(PROJECTS);
 
@@ -99,9 +127,14 @@ export function ReferentielTable(): React.JSX.Element {
                 <span className="text-base font-bold uppercase tracking-widest text-[#FFB020] sm:text-lg">
                   {entry.code}
                 </span>
-                <p className="text-base font-medium leading-tight text-white sm:text-lg">
+                <Link
+                  href={`#${entry.projectId}`}
+                  onClick={(event) => scrollToProject(event, entry.projectId)}
+                  aria-label={`Voir le projet ${entry.projectTitle} qui démontre cette compétence`}
+                  className="text-base font-medium leading-tight text-white underline decoration-transparent underline-offset-4 transition-colors hover:text-[#FFB020] hover:decoration-[#FFB020] focus-visible:text-[#FFB020] focus-visible:decoration-[#FFB020] sm:text-lg"
+                >
                   {entry.description}
-                </p>
+                </Link>
                 <span className="text-xs uppercase tracking-[0.1em] text-[#c4c7c8]/60">
                   {entry.projectTitle}
                 </span>
