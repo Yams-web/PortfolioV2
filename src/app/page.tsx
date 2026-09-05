@@ -12,7 +12,7 @@ export default function LandingPage(): React.JSX.Element {
     <IntroAnimation>
       <Navbar />
 
-      <main>
+      <main className="pt-24">
         <Hero />
         <Projects />
         <ReferentielSection />

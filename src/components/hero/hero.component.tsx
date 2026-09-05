@@ -12,7 +12,7 @@ export function Hero(): React.JSX.Element {
     <section
       ref={container}
       id="accueil"
-      className="grid grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] md:grid-cols-12"
+      className="grid scroll-mt-24 grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] md:grid-cols-12"
     >
       {/* Bloc gauche : accroche */}
       <div className="puzzle-piece flex min-h-[614px] flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-8">

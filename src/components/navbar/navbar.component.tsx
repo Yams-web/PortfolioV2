@@ -16,7 +16,7 @@ export function Navbar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#BAC4C8]/10 bg-[#141414]/90 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-[#BAC4C8]/10 bg-[#141414]/90 backdrop-blur">
       <nav
         aria-label="Navigation principale"
         className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6"

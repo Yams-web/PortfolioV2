@@ -5,7 +5,7 @@ export function Projects(): React.JSX.Element {
   return (
     <section
       id="projets"
-      className="border-t border-[#23252E] bg-[#0d0e12] px-4 py-20 sm:px-6 sm:py-28"
+      className="scroll-mt-24 border-t border-[#23252E] bg-[#0d0e12] px-4 py-20 sm:px-6 sm:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 max-w-2xl">
