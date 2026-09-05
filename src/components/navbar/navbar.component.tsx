@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { scrollToElement } from "@/lib/scroll-to-element";
 
 const NAV_LINKS = [
   { href: "#accueil", label: "Accueil" },
@@ -11,6 +12,14 @@ const NAV_LINKS = [
   { href: "#a-propos", label: "À propos" },
   { href: "#contact", label: "Contact" },
 ] as const;
+
+function handleAnchorClick(
+  event: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+): void {
+  event.preventDefault();
+  scrollToElement(href.replace("#", ""));
+}
 
 export function Navbar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +32,7 @@ export function Navbar(): React.JSX.Element {
       >
         <Link
           href="#accueil"
+          onClick={(event) => handleAnchorClick(event, "#accueil")}
           className="text-xl font-semibold tracking-tight text-[#BAC4C8] transition-colors hover:text-white"
         >
           Yamin Lamiri
@@ -33,6 +43,7 @@ export function Navbar(): React.JSX.Element {
             <li key={href}>
               <Link
                 href={href}
+                onClick={(event) => handleAnchorClick(event, href)}
                 className="text-base text-[#BAC4C8]/80 transition-colors hover:text-white"
               >
                 {label}
@@ -72,7 +83,10 @@ export function Navbar(): React.JSX.Element {
             <li key={href}>
               <Link
                 href={href}
-                onClick={() => setIsOpen(false)}
+                onClick={(event) => {
+                  handleAnchorClick(event, href);
+                  setIsOpen(false);
+                }}
                 className="block rounded-md px-2 py-2 text-base text-[#BAC4C8]/80 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {label}

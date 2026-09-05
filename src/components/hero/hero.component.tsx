@@ -4,6 +4,15 @@ import Link from "next/link";
 import React from "react";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { usePuzzleReveal } from "@/hooks";
+import { scrollToElement } from "@/lib/scroll-to-element";
+
+function handleAnchorClick(
+  event: React.MouseEvent<HTMLAnchorElement>,
+  href: string
+): void {
+  event.preventDefault();
+  scrollToElement(href.replace("#", ""));
+}
 
 export function Hero(): React.JSX.Element {
   const { container } = usePuzzleReveal();
@@ -30,6 +39,7 @@ export function Hero(): React.JSX.Element {
 
           <Link
             href="#projets"
+            onClick={(event) => handleAnchorClick(event, "#projets")}
             aria-label="Voir mes projets"
             className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-[#23252E] text-white transition-colors hover:bg-white hover:text-[#0d0e12]"
           >
@@ -70,6 +80,7 @@ export function Hero(): React.JSX.Element {
       <div className="puzzle-piece group flex h-48 items-center justify-center border border-transparent bg-white text-[#0d0e12] transition-colors hover:border-white hover:bg-[#121317] hover:text-white md:col-span-4">
         <Link
           href="#contact"
+          onClick={(event) => handleAnchorClick(event, "#contact")}
           className="flex items-center gap-4 text-sm font-semibold uppercase tracking-[0.15em]"
         >
           Lorem ipsum
