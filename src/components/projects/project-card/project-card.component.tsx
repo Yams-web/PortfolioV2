@@ -12,9 +12,9 @@ const COLUMN_SPAN_BY_SIZE: Record<ProjectSize, string> = {
 };
 
 const TITLE_CLASS_BY_SIZE: Record<ProjectSize, string> = {
-  lg: "text-2xl font-bold text-white sm:text-4xl",
-  md: "text-xl font-bold text-white sm:text-3xl",
-  sm: "text-lg font-bold text-white sm:text-xl",
+  lg: "text-3xl font-bold text-white sm:text-5xl",
+  md: "text-2xl font-bold text-white sm:text-4xl",
+  sm: "text-xl font-bold text-white sm:text-2xl",
 };
 
 export interface IProjectCardProps {
@@ -51,7 +51,7 @@ export function ProjectCard({ project }: IProjectCardProps): React.JSX.Element {
         } group-hover:pointer-events-none group-hover:-translate-y-2 group-hover:opacity-0 group-focus:pointer-events-none group-focus:-translate-y-2 group-focus:opacity-0`}
       >
         <h3 className={TITLE_CLASS_BY_SIZE[project.size]}>{project.title}</h3>
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-[#c4c7c8]">
+        <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] text-[#c4c7c8]">
           <ArrowUpRight aria-hidden="true" size={16} />
           Survoler pour en savoir plus
         </div>
@@ -68,7 +68,7 @@ export function ProjectCard({ project }: IProjectCardProps): React.JSX.Element {
           <h3 className={TITLE_CLASS_BY_SIZE[project.size]}>
             {project.title}
           </h3>
-          <p className="whitespace-pre-line text-sm leading-[1.8] text-[#c4c7c8]">
+          <p className="whitespace-pre-line text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
             {project.description}
           </p>
         </div>

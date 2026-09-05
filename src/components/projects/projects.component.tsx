@@ -9,17 +9,17 @@ export function Projects(): React.JSX.Element {
     >
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 max-w-2xl">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
             {"// Sélection de travaux"}
           </h2>
-          <p className="mt-4 text-2xl font-bold leading-tight text-white sm:text-4xl">
+          <p className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
             Projets
           </p>
-          <p className="mt-4 text-sm leading-[1.8] text-[#c4c7c8]">
+          <p className="mt-4 text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
             Une sélection de projets d&apos;études et personnels illustrant
             mon parcours de développement.
           </p>
-          <p className="mt-2 text-xs uppercase tracking-[0.1em] text-[#c4c7c8]/70">
+          <p className="mt-2 text-base leading-[1.7] text-[#c4c7c8]/70">
             Survolez une carte (ou sélectionnez-la au clavier / tactile) pour
             afficher sa description.
           </p>

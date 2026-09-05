@@ -63,14 +63,14 @@ export function Badge({ label, tooltip }: IBadgeProps): React.JSX.Element {
       onMouseLeave={deactivateRing}
       onFocus={activateRing}
       onBlur={deactivateRing}
-      className="group/badge relative inline-flex cursor-pointer border border-[#FFB020]/40 px-2 py-1 text-[10px] font-semibold uppercase tracking-widest text-[#FFB020] outline-none"
+      className="group/badge relative inline-flex cursor-pointer border border-[#FFB020]/40 px-3 py-2 text-sm font-semibold uppercase tracking-widest text-[#FFB020] outline-none"
     >
       <span ref={ringRef} aria-hidden="true" style={BADGE_RING_STYLE} className="pointer-events-none absolute inset-0" />
       <span className="relative z-10">{label}</span>
       <span
         id={tooltipId}
         role="tooltip"
-        className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-[220px] -translate-x-1/2 translate-y-1 border border-[#23252E] bg-[#0d0e12] px-3 py-2 text-left text-[11px] normal-case tracking-normal text-white opacity-0 shadow-lg transition-all duration-200 group-hover/badge:translate-y-0 group-hover/badge:opacity-100 group-focus-visible/badge:translate-y-0 group-focus-visible/badge:opacity-100"
+        className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-75 -translate-x-1/2 translate-y-1 border border-[#23252E] bg-[#0d0e12] px-4 py-3 text-left text-base normal-case leading-normal tracking-normal text-white opacity-0 shadow-lg transition-all duration-200 group-hover/badge:translate-y-0 group-hover/badge:opacity-100 group-focus-visible/badge:translate-y-0 group-focus-visible/badge:opacity-100"
       >
         {tooltip}
       </span>

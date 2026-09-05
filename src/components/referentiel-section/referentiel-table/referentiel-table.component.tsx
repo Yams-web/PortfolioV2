@@ -22,14 +22,25 @@ interface ICompetenceBlockDefinition {
 }
 
 const COMPETENCE_BLOCK_DEFINITIONS: ICompetenceBlockDefinition[] = [
-  { id: "bc01", title: "BC01 : Cadrer un projet", minOrder: 1, maxOrder: 6 },
+  {
+    id: "bc01",
+    title: "Cadrer un projet et conceptualiser une solution web",
+    minOrder: 1,
+    maxOrder: 6,
+  },
   {
     id: "bc02",
-    title: "BC02 : Développer une solution",
+    title: "Développer une solution web",
     minOrder: 7,
     maxOrder: 14,
   },
-  { id: "bc03", title: "BC03 : Assurance qualité", minOrder: 15, maxOrder: 20 },
+  {
+    id: "bc03",
+    title:
+      "Déployer un système d'assurance qualité tout au long du cycle de vie d'une solution web",
+    minOrder: 15,
+    maxOrder: 20,
+  },
 ];
 
 function parseCompetenceOrder(code: string): number {
@@ -76,7 +87,7 @@ export function ReferentielTable(): React.JSX.Element {
           key={block.id}
           className="flex flex-col gap-6 bg-[#121317] p-6 sm:p-8"
         >
-          <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#FFB020]">
+          <h3 className="text-lg font-bold uppercase tracking-[0.15em] text-[#FFB020] sm:text-xl">
             {block.title}
           </h3>
           <ul className="flex flex-col gap-5">
@@ -85,13 +96,13 @@ export function ReferentielTable(): React.JSX.Element {
                 key={entry.code}
                 className="flex flex-col gap-1 border-t border-[#23252E] pt-4 first:border-t-0 first:pt-0"
               >
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-[#FFB020]">
+                <span className="text-base font-bold uppercase tracking-widest text-[#FFB020] sm:text-lg">
                   {entry.code}
                 </span>
-                <p className="text-sm leading-[1.7] text-white">
+                <p className="text-base font-medium leading-tight text-white sm:text-lg">
                   {entry.description}
                 </p>
-                <span className="text-xs uppercase tracking-[0.1em] text-[#c4c7c8]">
+                <span className="text-xs uppercase tracking-[0.1em] text-[#c4c7c8]/60">
                   {entry.projectTitle}
                 </span>
               </li>

@@ -23,7 +23,7 @@ export function Navbar(): React.JSX.Element {
       >
         <Link
           href="#accueil"
-          className="text-lg font-semibold tracking-tight text-[#BAC4C8] transition-colors hover:text-white"
+          className="text-xl font-semibold tracking-tight text-[#BAC4C8] transition-colors hover:text-white"
         >
           Yamin Lamiri
         </Link>
@@ -33,7 +33,7 @@ export function Navbar(): React.JSX.Element {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm text-[#BAC4C8]/80 transition-colors hover:text-white"
+                className="text-base text-[#BAC4C8]/80 transition-colors hover:text-white"
               >
                 {label}
               </Link>
@@ -44,7 +44,7 @@ export function Navbar(): React.JSX.Element {
         <Link
           href="/cv.pdf"
           download
-          className="hidden rounded-full bg-purple-700 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-600 md:inline-block"
+          className="hidden rounded-full bg-purple-700 px-5 py-2 text-base font-medium text-white transition-colors hover:bg-purple-600 md:inline-block"
         >
           Télécharger le CV
         </Link>
@@ -73,7 +73,7 @@ export function Navbar(): React.JSX.Element {
               <Link
                 href={href}
                 onClick={() => setIsOpen(false)}
-                className="block rounded-md px-2 py-2 text-[#BAC4C8]/80 transition-colors hover:bg-white/5 hover:text-white"
+                className="block rounded-md px-2 py-2 text-base text-[#BAC4C8]/80 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {label}
               </Link>
@@ -84,7 +84,7 @@ export function Navbar(): React.JSX.Element {
               href="/cv.pdf"
               download
               onClick={() => setIsOpen(false)}
-              className="block rounded-full bg-purple-700 px-5 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-purple-600"
+              className="block rounded-full bg-purple-700 px-5 py-2 text-center text-base font-medium text-white transition-colors hover:bg-purple-600"
             >
               Télécharger le CV
             </Link>

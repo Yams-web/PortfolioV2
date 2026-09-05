@@ -7,7 +7,7 @@ export function ProjectList(): React.JSX.Element {
 
   if (projects.length === 0) {
     return (
-      <p className="border border-[#23252E] bg-[#121317] p-10 text-sm uppercase tracking-[0.1em] text-[#c4c7c8]">
+      <p className="border border-[#23252E] bg-[#121317] p-10 text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
         Contenu des projets en cours de rédaction.
       </p>
     );

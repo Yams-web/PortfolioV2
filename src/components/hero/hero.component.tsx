@@ -23,7 +23,7 @@ export function Hero(): React.JSX.Element {
         </div>
 
         <div className="flex w-full flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <p className="max-w-sm text-xs uppercase leading-[1.8] tracking-[0.01em] text-[#c4c7c8]">
+          <p className="max-w-sm text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -49,7 +49,7 @@ export function Hero(): React.JSX.Element {
           />
         </div>
         <div className="absolute bottom-10 right-10 z-20 border border-[#23252E] bg-[#121317] p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white">
             01 // Lorem
           </p>
         </div>
@@ -57,12 +57,12 @@ export function Hero(): React.JSX.Element {
 
       {/* Bloc bas gauche : détails */}
       <div className="puzzle-piece flex h-48 flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-4">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-[#c4c7c8]">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-[#c4c7c8]">
           Lorem ipsum dolor sit amet
         </p>
         <div className="flex items-end justify-between border-t border-[#23252E] pt-4">
-          <span className="text-xs text-[#c4c7c8]">Lorem</span>
-          <span className="text-xs text-[#c4c7c8]">2026</span>
+          <span className="text-sm text-[#c4c7c8]">Lorem</span>
+          <span className="text-sm text-[#c4c7c8]">2026</span>
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export function Hero(): React.JSX.Element {
       <div className="puzzle-piece group flex h-48 items-center justify-center border border-transparent bg-white text-[#0d0e12] transition-colors hover:border-white hover:bg-[#121317] hover:text-white md:col-span-4">
         <Link
           href="#contact"
-          className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em]"
+          className="flex items-center gap-4 text-sm font-semibold uppercase tracking-[0.15em]"
         >
           Lorem ipsum
           <ArrowRight
@@ -84,7 +84,7 @@ export function Hero(): React.JSX.Element {
       {/* Bloc bas droite : statistique */}
       <div className="puzzle-piece flex h-48 flex-col justify-end bg-[#121317] p-6 sm:p-10 md:col-span-4">
         <p className="text-[48px] font-bold leading-none text-white">99.9%</p>
-        <p className="mt-2 text-xs uppercase tracking-[0.01em] text-[#c4c7c8]">
+        <p className="mt-2 text-sm uppercase tracking-[0.01em] text-[#c4c7c8]">
           Lorem ipsum dolor
         </p>
       </div>
