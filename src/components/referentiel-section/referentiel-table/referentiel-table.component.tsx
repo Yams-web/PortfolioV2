@@ -2,11 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { gsap } from "@/lib/gsap";
+import { scrollToElement, getCompetenceElementId } from "@/lib/scroll-to-element";
 import { PROJECTS, type IBadge, type IProject } from "@/components/projects";
-
-const SCROLL_OFFSET_PX: number = 96;
-const SCROLL_DURATION_SECONDS: number = 1;
 
 interface ICompetenceEntry {
   code: string;
@@ -91,18 +88,7 @@ function scrollToProject(
   projectId: string
 ): void {
   event.preventDefault();
-
-  const target: HTMLElement | null = document.getElementById(projectId);
-
-  if (target) {
-    gsap.to(window, {
-      duration: SCROLL_DURATION_SECONDS,
-      ease: "power2.out",
-      scrollTo: { y: target, offsetY: SCROLL_OFFSET_PX },
-    });
-  }
-
-  window.history.replaceState(null, "", `#${projectId}`);
+  scrollToElement(projectId);
 }
 
 export function ReferentielTable(): React.JSX.Element {
@@ -122,7 +108,8 @@ export function ReferentielTable(): React.JSX.Element {
             {block.entries.map((entry: ICompetenceEntry) => (
               <li
                 key={entry.code}
-                className="flex flex-col gap-1 border-t border-[#23252E] pt-4 first:border-t-0 first:pt-0"
+                id={getCompetenceElementId(entry.code)}
+                className="flex scroll-mt-24 flex-col gap-1 border-t border-[#23252E] pt-4 first:border-t-0 first:pt-0"
               >
                 <span className="text-base font-bold uppercase tracking-widest text-[#FFB020] sm:text-lg">
                   {entry.code}

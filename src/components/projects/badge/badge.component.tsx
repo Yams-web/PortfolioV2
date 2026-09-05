@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useId, useRef } from "react";
+import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { scrollToElement, getCompetenceElementId } from "@/lib/scroll-to-element";
 
 const BADGE_ACCENT_COLOR: string = "#FFB020";
 const BADGE_RING_DURATION_SECONDS: number = 2.6;
@@ -27,9 +29,16 @@ const BADGE_RING_STYLE: IBadgeRingStyle = {
 
 export function Badge({ label, tooltip }: IBadgeProps): React.JSX.Element {
   const tooltipId: string = useId();
-  const containerRef = useRef<HTMLSpanElement | null>(null);
+  const containerRef = useRef<HTMLAnchorElement | null>(null);
   const ringRef = useRef<HTMLSpanElement | null>(null);
   const ringTweenRef = useRef<gsap.core.Tween | null>(null);
+  const competenceElementId: string = getCompetenceElementId(label);
+
+  const navigateToCompetence = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+    event.preventDefault();
+    event.stopPropagation();
+    scrollToElement(competenceElementId);
+  };
 
   useGSAP(
     () => {
@@ -55,10 +64,12 @@ export function Badge({ label, tooltip }: IBadgeProps): React.JSX.Element {
   };
 
   return (
-    <span
+    <Link
       ref={containerRef}
-      tabIndex={0}
+      href={`#${competenceElementId}`}
+      onClick={navigateToCompetence}
       aria-describedby={tooltipId}
+      aria-label={`${label} — voir cette compétence dans le référentiel RNCP`}
       onMouseEnter={activateRing}
       onMouseLeave={deactivateRing}
       onFocus={activateRing}
@@ -74,6 +85,6 @@ export function Badge({ label, tooltip }: IBadgeProps): React.JSX.Element {
       >
         {tooltip}
       </span>
-    </span>
+    </Link>
   );
 }
