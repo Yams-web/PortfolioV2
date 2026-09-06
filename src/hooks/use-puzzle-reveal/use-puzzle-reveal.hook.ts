@@ -51,26 +51,6 @@ export function usePuzzleReveal({
 
     const cleanupTasks: Array<() => void> = [];
 
-    const settleUnderGravity = () => {
-      pieces.forEach((piece, index) => {
-        const drift = 10 + (index % PIECE_OFFSETS.length) * 5;
-
-        const gravityTween = gsap.to(piece, {
-          y: drift,
-          ease: "none",
-          scrollTrigger: {
-            trigger: piece,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1.2,
-          },
-        });
-
-        cleanupTasks.push(() => gravityTween.scrollTrigger?.kill());
-        cleanupTasks.push(() => gravityTween.kill());
-      });
-    };
-
     const revealPieces = () => {
       const revealTween = gsap.to(pieces, {
         opacity: 1,
@@ -80,7 +60,6 @@ export function usePuzzleReveal({
         duration: 1.2,
         ease: "back.out(1.4)",
         stagger: 0.22,
-        onComplete: settleUnderGravity,
       });
 
       cleanupTasks.push(() => revealTween.kill());
