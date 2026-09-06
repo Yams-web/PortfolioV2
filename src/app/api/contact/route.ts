@@ -38,7 +38,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     await sendContactEmail(payload);
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch {
+  } catch (error) {
+    console.error("Échec de l'envoi du message de contact :", error);
     return NextResponse.json(
       { error: "L'envoi du message a échoué. Merci de réessayer plus tard." },
       { status: 500 }

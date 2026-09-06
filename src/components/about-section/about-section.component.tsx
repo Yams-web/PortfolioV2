@@ -16,12 +16,12 @@ export function AboutSection(): React.JSX.Element {
     >
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 max-w-2xl">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
             {"// À propos"}
-          </h2>
-          <p className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
-            Mon parcours
           </p>
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
+            Mon parcours
+          </h2>
         </header>
 
         <div className="border border-[#23252E] bg-[#121317] p-6 sm:p-10">

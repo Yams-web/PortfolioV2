@@ -128,12 +128,12 @@ export function ContactSection(): React.JSX.Element {
     >
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 max-w-2xl">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
             {"// Contact"}
-          </h2>
-          <p className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
-            Me contacter
           </p>
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
+            Me contacter
+          </h2>
           <p className="mt-4 text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
             Une question, une opportunité, ou simplement envie d&apos;échanger :
             n&apos;hésitez pas à me contacter.
@@ -171,6 +171,7 @@ export function ContactSection(): React.JSX.Element {
                   href={href}
                   aria-label={label}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center border border-[#23252E] text-[#c4c7c8] transition-colors hover:border-[#00E5FF] hover:text-[#00E5FF]"
                 >
                   <Icon aria-hidden="true" size={18} />

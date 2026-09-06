@@ -9,12 +9,12 @@ export function Projects(): React.JSX.Element {
     >
       <div className="mx-auto max-w-6xl">
         <header className="mb-16 max-w-2xl">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#00E5FF]">
             {"// Sélection de travaux"}
-          </h2>
-          <p className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
-            Projets
           </p>
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-5xl">
+            Projets
+          </h2>
           <p className="mt-4 text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
             Une sélection de projets d&apos;études et personnels illustrant
             mon parcours de développement.

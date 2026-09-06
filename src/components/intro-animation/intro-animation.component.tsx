@@ -24,9 +24,9 @@ export function IntroAnimation({
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c4c7c8]">
           Init_Portfolio
         </p>
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+        <p className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
           Yamin Lamiri
-        </h2>
+        </p>
         <div className="flex w-48 flex-col items-center gap-3 sm:w-64">
           <div className="h-px w-full origin-left overflow-hidden bg-[#23252E]">
             <div className="intro-bar h-full w-full origin-left scale-x-0 bg-[#00E5FF]" />

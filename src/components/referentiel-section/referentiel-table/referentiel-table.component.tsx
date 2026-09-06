@@ -91,12 +91,12 @@ function scrollToProject(
   scrollToElement(projectId);
 }
 
-export function ReferentielTable(): React.JSX.Element {
-  const blocks: ICompetenceBlock[] = buildCompetenceBlocks(PROJECTS);
+const COMPETENCE_BLOCKS: ICompetenceBlock[] = buildCompetenceBlocks(PROJECTS);
 
+export function ReferentielTable(): React.JSX.Element {
   return (
     <div className="grid grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] md:grid-cols-3">
-      {blocks.map((block: ICompetenceBlock) => (
+      {COMPETENCE_BLOCKS.map((block: ICompetenceBlock) => (
         <div
           key={block.id}
           className="flex flex-col gap-6 bg-[#121317] p-6 sm:p-8"

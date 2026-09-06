@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { usePuzzleReveal } from "@/hooks";
@@ -27,14 +28,15 @@ export function Hero(): React.JSX.Element {
       <div className="puzzle-piece flex min-h-[614px] flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-8">
         <div className="max-w-4xl">
           <h1 className="mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            Concepteur d'applications et de sites web. Curieux d'apprendre.
+            Concepteur d&apos;applications et de sites web. Curieux
+            d&apos;apprendre.
           </h1>
         </div>
 
         <div className="flex w-full flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <p className="max-w-sm text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
-            Développeur Web full-stack junior, étudiant à Epitech Lille. je mets
-            actuellement ces compétences en pratique en alternance chez
+            Développeur Web full-stack junior, étudiant à Epitech Lille. Je
+            mets actuellement ces compétences en pratique en alternance chez
             Decathlon.
           </p>
 
@@ -58,10 +60,13 @@ export function Hero(): React.JSX.Element {
       >
         <div className="pointer-events-none absolute inset-6 z-10 border border-[#23252E] transition-colors group-hover:border-[#00E5FF] sm:inset-10" />
         <div className="relative h-full w-full min-h-[280px] overflow-hidden bg-[#1a1b20]">
-          <img
+          <Image
             src="/working.jpg"
             alt="Photo professionnelle de Yamin Lamiri"
-            className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+            fill
+            priority
+            sizes="(min-width: 768px) 33vw, 100vw"
+            className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
           />
         </div>
         <div className="absolute bottom-10 right-10 z-20 border border-[#23252E] bg-[#121317] p-4">
