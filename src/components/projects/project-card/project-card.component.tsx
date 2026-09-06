@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { type IProject, type ProjectSize } from "../projects.data";
 import { BadgeList } from "../badge-list";
+import { TechBadgeList } from "../tech-badge-list";
 
 const COLUMN_SPAN_BY_SIZE: Record<ProjectSize, string> = {
   lg: "md:col-span-8",
@@ -72,6 +73,7 @@ export function ProjectCard({ project }: IProjectCardProps): React.JSX.Element {
           <p className="whitespace-pre-line text-base leading-[1.7] text-[#c4c7c8] sm:text-lg">
             {project.description}
           </p>
+          <TechBadgeList stack={project.stack} />
         </div>
         <BadgeList badges={project.competences} />
       </div>

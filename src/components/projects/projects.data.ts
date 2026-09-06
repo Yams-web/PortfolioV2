@@ -11,6 +11,7 @@ export interface IProject {
   title: string;
   description: string;
   size: ProjectSize;
+  stack: string[];
   competences: IBadge[];
 }
 
@@ -21,6 +22,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Boutique en ligne spécialisée dans la vente de produits dérivés Pokémon, principalement des cartes à collectionner.",
     size: "lg",
+    stack: ["Nuxt", "Vue", "Pinia", "TypeScript"],
     competences: [
       {
         id: "e-commerce-maquette",
@@ -60,6 +62,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Mise en œuvre d'un plan de tests, fonctionnels et unitaires, sur les opérations CRUD (création, lecture, mise à jour, suppression) d'un utilisateur.",
     size: "sm",
+    stack: ["Postman", "Jasmine"],
     competences: [
       {
         id: "mycrudtester-plan-de-tests",
@@ -74,6 +77,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Conception d'un SaaS proposant une boîte à outils d'anonymisation de données sensibles, avec deux interfaces dédiées : une offre B2B pour les entreprises et une offre B2C pour les particuliers.",
     size: "md",
+    stack: ["Python", "Nuxt", "OCR"],
     competences: [
       {
         id: "projet-libre-cdc",
@@ -103,6 +107,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Reprise d'un ancien projet e-commerce dans une démarche de développement responsable : amélioration de la qualité du code, des scores Lighthouse, du SEO et de l'accessibilité.",
     size: "md",
+    stack: [],
     competences: [
       {
         id: "devresponsable-doc-technique",
@@ -138,6 +143,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Implémentation d'un client de messagerie de type IRC (Internet Relay Chat) : création de channels, discussion à plusieurs en temps réel entre différents comptes et navigateurs, avec gestion CRUD complète des utilisateurs et des channels.",
     size: "lg",
+    stack: ["Socket.IO", "Next.js", "React", "Express"],
     competences: [
       {
         id: "irc-integration",
@@ -162,6 +168,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Première version du portfolio, déployée en production, conçue pour mettre en valeur l'étendue de mon travail à travers une direction artistique travaillée.",
     size: "sm",
+    stack: ["Next.js"],
     competences: [
       {
         id: "portfolio-v1-deploiement",
