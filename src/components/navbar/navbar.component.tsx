@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { scrollToElement } from "@/lib/scroll-to-element";
 
 const NAV_LINKS = [
@@ -53,10 +53,11 @@ export function Navbar(): React.JSX.Element {
         </ul>
 
         <Link
-          href="/cv.pdf"
+          href="/Cv_Yamin.pdf"
           download
-          className="hidden rounded-full bg-purple-700 px-5 py-2 text-base font-medium text-white transition-colors hover:bg-purple-600 md:inline-block"
+          className="hidden items-center gap-2 rounded-full bg-[#00E5FF] px-5 py-2 text-base font-medium text-[#0d0e12] transition-colors hover:bg-white md:inline-flex"
         >
+          <Download aria-hidden="true" size={18} />
           Télécharger le CV
         </Link>
 
@@ -95,11 +96,12 @@ export function Navbar(): React.JSX.Element {
           ))}
           <li className="pt-2">
             <Link
-              href="/cv.pdf"
+              href="/Cv_Yamin.pdf"
               download
               onClick={() => setIsOpen(false)}
-              className="block rounded-full bg-purple-700 px-5 py-2 text-center text-base font-medium text-white transition-colors hover:bg-purple-600"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#00E5FF] px-5 py-2 text-base font-medium text-[#0d0e12] transition-colors hover:bg-white"
             >
+              <Download aria-hidden="true" size={18} />
               Télécharger le CV
             </Link>
           </li>
