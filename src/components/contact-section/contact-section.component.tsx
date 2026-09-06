@@ -1,5 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
+
+type TContactSubmitStatus = "idle" | "loading" | "success" | "error";
 
 interface IContactFormField {
   id: string;
@@ -52,8 +56,8 @@ const CONTACT_FORM_FIELDS: IContactFormField[] = [
 const CONTACT_INFO_ITEMS: IContactInfoItem[] = [
   {
     label: "Email",
-    value: "y.lamiri@proton.me",
-    href: "mailto:y.lamiri@proton.me",
+    value: "yaminlamiri00@gmail.com",
+    href: "mailto:yaminlamiri00@gmail.com",
   },
 ];
 
@@ -66,7 +70,57 @@ const SOCIAL_LINKS: ISocialLink[] = [
   { label: "GitHub", href: "https://github.com/Yams-web", icon: Github },
 ];
 
+const STATUS_MESSAGE_BY_STATUS: Record<TContactSubmitStatus, string> = {
+  idle: "",
+  loading: "",
+  success: "Votre message a bien été envoyé, merci !",
+  error:
+    "L'envoi a échoué. Merci de réessayer ou de m'écrire directement par email.",
+};
+
+const SUBMIT_LABEL_BY_STATUS: Record<TContactSubmitStatus, string> = {
+  idle: "Envoyer le message",
+  loading: "Envoi en cours...",
+  success: "Message envoyé",
+  error: "Réessayer",
+};
+
 export function ContactSection(): React.JSX.Element {
+  const [status, setStatus] = useState<TContactSubmitStatus>("idle");
+
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    event.preventDefault();
+
+    const form: HTMLFormElement = event.currentTarget;
+    const formData: FormData = new FormData(form);
+
+    setStatus("loading");
+
+    try {
+      const response: Response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("request-failed");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -86,8 +140,8 @@ export function ContactSection(): React.JSX.Element {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] md:grid-cols-12">
-          <div className="flex flex-col justify-between gap-10 bg-[#121317] p-6 sm:p-10 md:col-span-4">
+        <div className="grid grid-cols-1 gap-px border border-[#23252E] bg-[#23252E] lg:grid-cols-12">
+          <div className="flex flex-col justify-between gap-10 bg-[#121317] p-6 sm:p-10 lg:col-span-4">
             <div className="flex flex-col gap-6">
               {CONTACT_INFO_ITEMS.map((item: IContactInfoItem) => (
                 <a
@@ -125,7 +179,10 @@ export function ContactSection(): React.JSX.Element {
             </div>
           </div>
 
-          <form className="flex flex-col gap-6 bg-[#121317] p-6 sm:p-10 md:col-span-8">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-6 bg-[#121317] p-6 sm:p-10 lg:col-span-8"
+          >
             {CONTACT_FORM_FIELDS.map((field: IContactFormField) => (
               <div key={field.id} className="flex flex-col gap-2">
                 <label
@@ -163,12 +220,25 @@ export function ContactSection(): React.JSX.Element {
               />
             </div>
 
-            <button
-              type="submit"
-              className="mt-2 self-start border border-[#23252E] bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-[#0d0e12] transition-colors hover:bg-[#00E5FF] hover:cursor-pointer"
-            >
-              Envoyer le message
-            </button>
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="border border-[#23252E] bg-white px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-[#0d0e12] transition-colors hover:cursor-pointer hover:bg-[#00E5FF] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {SUBMIT_LABEL_BY_STATUS[status]}
+              </button>
+
+              <p
+                role="status"
+                aria-live="polite"
+                className={`text-sm ${
+                  status === "error" ? "text-red-400" : "text-[#c4c7c8]"
+                }`}
+              >
+                {STATUS_MESSAGE_BY_STATUS[status]}
+              </p>
+            </div>
           </form>
         </div>
       </div>
