@@ -6,6 +6,7 @@ import {
   Projects,
   ReferentielSection,
   AboutSection,
+  ContactSection,
 } from "@/components";
 
 export default function LandingPage(): React.JSX.Element {
@@ -18,6 +19,7 @@ export default function LandingPage(): React.JSX.Element {
         <Projects />
         <ReferentielSection />
         <AboutSection />
+        <ContactSection />
       </main>
     </IntroAnimation>
   );
