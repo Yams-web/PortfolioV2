@@ -49,7 +49,12 @@ export function Hero(): React.JSX.Element {
       </div>
 
       {/* Bloc droit : photo professionnelle */}
-      <div className="puzzle-piece group relative flex h-full flex-col bg-[#121317] p-6 sm:p-10 md:col-span-4">
+      <Link
+        href="#a-propos"
+        onClick={(event) => handleAnchorClick(event, "#a-propos")}
+        aria-label="Voir la section À propos"
+        className="puzzle-piece group relative flex h-full flex-col bg-[#121317] p-6 sm:p-10 md:col-span-4"
+      >
         <div className="pointer-events-none absolute inset-6 z-10 border border-[#23252E] transition-colors group-hover:border-[#00E5FF] sm:inset-10" />
         <div className="relative h-full w-full min-h-[280px] overflow-hidden bg-[#1a1b20]">
           <img
@@ -60,10 +65,10 @@ export function Hero(): React.JSX.Element {
         </div>
         <div className="absolute bottom-10 right-10 z-20 border border-[#23252E] bg-[#121317] p-4">
           <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white">
-            01 // Lorem
+            01 // Portrait
           </p>
         </div>
-      </div>
+      </Link>
 
       {/* Bloc bas gauche : détails */}
       <div className="puzzle-piece flex h-48 flex-col justify-between bg-[#121317] p-6 sm:p-10 md:col-span-4">
